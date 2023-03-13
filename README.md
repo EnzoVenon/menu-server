@@ -32,3 +32,4 @@ Lire les menus enregistrés
 ```bash
 curl localhost:8080/menus
 ```
+ajout
