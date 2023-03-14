@@ -4,9 +4,15 @@ on:
 jobs:
   dire_bonjour:
     runs-on: ubuntu-22.04
-    container:
-      image: ghcr.io/cicd-lectures/gitpod:latest
-      options: --user=root
     steps:
       - uses: actions/checkout@v3
-      - run: cat README.md | cowsay
+      - name: Read README.md
+        id: README
+        uses: juliangruber/read-file-action@v1
+        with:
+          path: ./README.md
+      - run: cat "${{ steps.README.outputs.content }}"
+      - name: output the message on actions result
+        uses: Code-Hex/neo-cowsay-action@v1
+        with:
+          message: Hello, this is Hiba ! I'm a cow.
