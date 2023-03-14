@@ -11,7 +11,7 @@ jobs:
         uses: juliangruber/read-file-action@v1
         with:
           path: ./README.md
-      - run: cat "${{ steps.README.outputs.content }}"
+      - run: echo "${{ steps.README.outputs.content }}"
       - name: output the message on actions result
         uses: Code-Hex/neo-cowsay-action@v1
         with:
