@@ -22,3 +22,7 @@ jobs:
       
       - name: Building the application jar
         run: mvn clean package
+      
+      - name: Release
+        if: contains(github.ref, 'refs/tags/v')
+        run: gh release create --latest --title=${{github.ref}} ${{github.ref}} ./menu-server/target/menu-server.jar
