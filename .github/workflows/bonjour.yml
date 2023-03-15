@@ -18,7 +18,7 @@ jobs:
       - name: Set up Maven
         uses: stCarolas/setup-maven@v4.5
         with:
-          maven-version: 3.0.6
+          maven-version: 3.8.6
       
       - name: Building the application jar
         run: mvn clean install
