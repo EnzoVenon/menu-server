@@ -21,4 +21,4 @@ jobs:
           maven-version: 3.8.6
       
       - name: Building the application jar
-        run: mvn clean install
+        run: mvn clean package
