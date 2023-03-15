@@ -20,5 +20,5 @@ jobs:
         with:
           maven-version: 3.8.6
       
-      - name: Building the application jar
+      - name: Launching unity tests, building the application jar, and launching integration tests
         run: mvn clean verify
