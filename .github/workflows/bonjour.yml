@@ -6,10 +6,9 @@ jobs:
   dire_bonjour:
     runs-on: ubuntu-22.04
     steps:
-
       - name: Checkout
         uses: actions/checkout@v3
-      
+    
       - name: Set up Java
         uses: actions/setup-java@v3
         with:
@@ -19,12 +18,7 @@ jobs:
       - name: Set up Maven
         uses: stCarolas/setup-maven@v4.5
         with:
-          maven-version: 3.8.6
+          maven-version: 3.0.6
       
       - name: Building the application jar
-        run: mvn clean package
-
-      - name: output the message on actions result
-        uses: Code-Hex/neo-cowsay-action@v1
-        with:
-          message: Meow, meow, I'm a cow ! I said meow meow I'm a cow !
+        run: mvn clean install
